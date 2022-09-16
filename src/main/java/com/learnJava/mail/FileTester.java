@@ -16,12 +16,6 @@ public class FileTester {
 	public String fileConfirmer() throws IOException {
 		// TODO Auto-generated method stub
 		
-		SimpleDateFormat sdf=new SimpleDateFormat();
-		
-		Date date=new Date();
-		
-		String currentDate=sdf.format(date);
-		
         Properties prop=new Properties();
 		
 		FileInputStream fis=new FileInputStream("C:\\Users\\Admin\\eclipse-workspace\\mail\\src\\main\\java\\config.properties");
@@ -32,9 +26,23 @@ public class FileTester {
 		String filePath = prop.getProperty("filePath");
 		String regex = prop.getProperty("regex");
 		String regex2 = prop.getProperty("regex2");
-		final String fileNameOrig = prop.getProperty("fileNameOrig");
-
-
+		String fileType = prop.getProperty("fileType");
+		String fileNameOrig = prop.getProperty("fileNameOrig");
+		String output1 = prop.getProperty("output1");
+		String output2 = prop.getProperty("output2");
+		String dateFormat = prop.getProperty("dateFormat");
+		
+		SimpleDateFormat sdf=new SimpleDateFormat(dateFormat);
+		
+		Date date=new Date();
+		
+		String currentDate=sdf.format(date);
+		
+		String fileNameOriginal = fileNameOrig+currentDate+fileType;
+		
+		System.out.println(fileNameOriginal);
+		
+		
 		String fileName,output = null;
 		
 		int lineCount = 0,k=0;
@@ -53,15 +61,7 @@ public class FileTester {
 
 				if (match.find()) {
 					
-					System.out.println(fileName);
-					
-					System.out.println(fileNameOrig);
-					
-					System.out.println(fileNameOrig == fileName);
-					
-					if(fileName.matches(fileNameOrig)) {
-						
-						System.out.println("Filename and FileOrig Match");
+					if(fileName.matches(fileNameOriginal)) {
 						
 						BufferedReader br = new BufferedReader(new FileReader(filePath));
 
@@ -91,15 +91,13 @@ public class FileTester {
 						
 						if(k==lineCount) {
 							
-							output = "Linecount Verified in given file\nCount found OK";
+							System.out.println(output1);
 							
 						}else {
 							
-							output = "Linecount Verified in given file\nCount found Not OK";
+							System.out.println(output2);
 							
 						}
-						
-						System.out.println(output);
 						
 						br.close();
 						

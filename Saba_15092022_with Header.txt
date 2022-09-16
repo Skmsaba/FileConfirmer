@@ -1,0 +1,8 @@
+Sl.No    Name          DOB            mail               Mobile       Address
+1        Sabari        01-01-2000     abc@gmail.com      428782708    hbhkjdND
+2        Vijay         02-02-2000     bcd@gmail.com      746763989    hggeygeu
+3        hukar         03-03-2000     cde@gmail.com      878749890    ygdyguhi
+4        Annad         04-04-2000     def@gmail.com      648747948    dhgejhjh
+5        Dharra        05-05-2000     efg@gmail.com      877980009    hgahegrh
+6        kuribu        06-06-2000     fgh@gmail.com      878980909    gghfjhrl
+6         6                6               6                  6            6  

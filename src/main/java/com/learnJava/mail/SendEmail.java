@@ -12,6 +12,8 @@ public class SendEmail {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
+		System.out.println("Hello");
+		
 		FileTester mailText=new FileTester();
 		
 		Properties prop=new Properties();
